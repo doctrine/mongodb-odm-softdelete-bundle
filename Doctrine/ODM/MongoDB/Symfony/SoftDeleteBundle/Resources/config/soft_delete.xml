@@ -6,7 +6,6 @@
     <parameters>
         <parameter key="doctrine.odm.mongodb.soft_delete.manager.class">Doctrine\ODM\MongoDB\SoftDelete\SoftDeleteManager</parameter>
         <parameter key="doctrine.odm.mongodb.soft_delete.configuration.class">Doctrine\ODM\MongoDB\SoftDelete\Configuration</parameter>
-        <parameter key="doctrine.odm.mongodb.soft_delete.unit_of_work.class">Doctrine\ODM\MongoDB\SoftDelete\UnitOfWork</parameter>
         <parameter key="doctrine.odm.mongodb.soft_delete.event_manager.class">Doctrine\Common\EventManager</parameter>
     </parameters>
 
@@ -14,17 +13,9 @@
         <service id="doctrine.odm.mongodb.soft_delete.manager" class="%doctrine.odm.mongodb.soft_delete.manager.class%">
             <argument type="service" id="doctrine.odm.mongodb.document_manager" />
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.configuration" />
-            <argument type="service" id="doctrine.odm.mongodb.soft_delete.unit_of_work" />
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.event_manager" />
         </service>
-
         <service id="doctrine.odm.mongodb.soft_delete.configuration" class="%doctrine.odm.mongodb.soft_delete.configuration.class%" />
-
-        <service id="doctrine.odm.mongodb.soft_delete.unit_of_work" class="%doctrine.odm.mongodb.soft_delete.unit_of_work.class%">
-            <argument type="service" id="doctrine.odm.mongodb.document_manager" />
-            <argument type="service" id="doctrine.odm.mongodb.soft_delete.configuration" />
-        </service>
-
         <service id="doctrine.odm.mongodb.soft_delete.event_manager" class="%doctrine.odm.mongodb.soft_delete.event_manager.class%" />
     </services>
 </container>
