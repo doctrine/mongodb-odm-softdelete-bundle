@@ -2,16 +2,19 @@
 
 namespace Doctrine\ODM\MongoDB\Symfony\SoftDeleteBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Doctrine\ODM\MongoDB\Symfony\SoftDeleteBundle\DependencyInjection\Compiler\RegisterEventListenersAndSubscribersPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Compiler\PassConfig;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class SoftDeleteBundle extends Bundle
 {
-    public function registerExtensions(ContainerBuilder $container)
+    /**
+     * @see Symfony\Component\HttpKernel\Bundle.Bundle::build()
+     */
+    public function build(ContainerBuilder $container)
     {
-        parent::registerExtensions($container);
+        parent::build($container);
 
         $container->addCompilerPass(new RegisterEventListenersAndSubscribersPass(), PassConfig::TYPE_BEFORE_OPTIMIZATION);
     }
