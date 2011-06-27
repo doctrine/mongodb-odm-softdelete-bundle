@@ -15,7 +15,7 @@
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.configuration" />
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.event_manager" />
         </service>
-        <service id="doctrine.odm.mongodb.soft_delete.configuration" class="%doctrine.odm.mongodb.soft_delete.configuration.class%" />
-        <service id="doctrine.odm.mongodb.soft_delete.event_manager" class="%doctrine.odm.mongodb.soft_delete.event_manager.class%" />
+        <service id="doctrine.odm.mongodb.soft_delete.configuration" class="%doctrine.odm.mongodb.soft_delete.configuration.class%" public="false" />
+        <service id="doctrine.odm.mongodb.soft_delete.event_manager" class="%doctrine.odm.mongodb.soft_delete.event_manager.class%" public="false" />
     </services>
 </container>

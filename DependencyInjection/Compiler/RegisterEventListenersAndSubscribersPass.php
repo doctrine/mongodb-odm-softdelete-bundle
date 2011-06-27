@@ -1,6 +1,6 @@
 <?php
 
-namespace Doctrine\ODM\MongoDB\Symfony\SoftDeleteBundle\DependencyInjection\Compiler;
+namespace Doctrine\Bundle\MongoDBSoftDeleteBundle\DependencyInjection\Compiler;
 
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
