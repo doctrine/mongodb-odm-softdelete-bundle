@@ -1,13 +1,13 @@
 <?php
 
-namespace Doctrine\ODM\MongoDB\Symfony\SoftDeleteBundle;
+namespace Doctrine\Bundle\MongoDBSoftDeleteBundle;
 
-use Doctrine\ODM\MongoDB\Symfony\SoftDeleteBundle\DependencyInjection\Compiler\RegisterEventListenersAndSubscribersPass;
+use Doctrine\Bundle\MongoDBSoftDeleteBundle\DependencyInjection\Compiler\RegisterEventListenersAndSubscribersPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\PassConfig;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SoftDeleteBundle extends Bundle
+class DoctrineMongoDBSoftDeleteBundle extends Bundle
 {
     /**
      * @see Symfony\Component\HttpKernel\Bundle.Bundle::build()
