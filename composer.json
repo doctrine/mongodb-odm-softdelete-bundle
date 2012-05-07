@@ -1,0 +1,28 @@
+{
+    "name": "doctrine/mongodb-odm-softdelete-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Doctrine MongoDB SoftDelete Bundle",
+    "keywords": ["softdelete", "persistence", "mongodb", "symfony"],
+    "homepage": "http://www.doctrine-project.org",
+    "license": "MIT",
+    "authors": [
+        {"name": "Jonathan H. Wage", "email": "jonwage@gmail.com"},
+        {"name": "Igor Golovanov", "email": "igor.golovanov@gmail.com"},
+        {"name": "Jeremy Mikola", "email": "jmikola@gmail.com"},
+        {"name": "Kris Wallsmith", "email": "kris@symfony.com"},
+        {"name": "Chris Jones", "email": "leeked@gmail.com"}
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "doctrine/mongodb-odm-bundle": "*",
+        "doctrine/mongodb-odm-softdelete": "*",
+        "symfony/doctrine-bridge": "*",
+        "symfony/framework-bundle": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Doctrine\\Bundle\\MongoDBSoftDeleteBundle": ""
+        }
+    },
+    "target-dir" : "Doctrine/Bundle/MongoDBSoftDeleteBundle"
+}

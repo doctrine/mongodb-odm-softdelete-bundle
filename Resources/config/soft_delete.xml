@@ -7,6 +7,7 @@
         <parameter key="doctrine.odm.mongodb.soft_delete.manager.class">Doctrine\ODM\MongoDB\SoftDelete\SoftDeleteManager</parameter>
         <parameter key="doctrine.odm.mongodb.soft_delete.configuration.class">Doctrine\ODM\MongoDB\SoftDelete\Configuration</parameter>
         <parameter key="doctrine.odm.mongodb.soft_delete.event_manager.class">Doctrine\Common\EventManager</parameter>
+        <parameter key="doctrine.odm.mongodb.soft_delete.deleted_field_name">deletedAt</parameter>
     </parameters>
 
     <services>
@@ -15,7 +16,11 @@
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.configuration" />
             <argument type="service" id="doctrine.odm.mongodb.soft_delete.event_manager" />
         </service>
-        <service id="doctrine.odm.mongodb.soft_delete.configuration" class="%doctrine.odm.mongodb.soft_delete.configuration.class%" public="false" />
+        <service id="doctrine.odm.mongodb.soft_delete.configuration" class="%doctrine.odm.mongodb.soft_delete.configuration.class%" public="false">
+            <call method="setDeletedFieldName">
+                <argument>%doctrine.odm.mongodb.soft_delete.deleted_field_name%</argument>
+            </call>
+        </service>
         <service id="doctrine.odm.mongodb.soft_delete.event_manager" class="%doctrine.odm.mongodb.soft_delete.event_manager.class%" public="false" />
     </services>
 </container>
